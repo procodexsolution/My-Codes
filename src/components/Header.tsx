@@ -78,7 +78,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-5 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden"
+      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-5 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden "
     >
       <div className="mx-auto flex items-center justify-between ">
         {/* Logo */}
