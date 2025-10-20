@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+/* Tailwind base import */
+@import "tailwindcss";
+
+/* Color variables */
+:root {
+  --bg: #0b0b0d;
+  --card: #151516;
+  --muted: #9aa0a6;
+  --accent1: #7c3aed;
+  --accent2: #06b6d4;
+  --accent3: #ff6ec7;
+}
+
+/* Fade animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-in-out;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Base layer */
+@layer base {
+  body {
+    background: var(--bg);
+    color: #e5e7eb; /* Tailwind gray-200 */
+    font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-normal tracking-tight;
+  }
+}
+
+/* Components layer */
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Card glass effect */
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(
+      90deg,
+      var(--accent3),
+      var(--accent1),
+      var(--accent2)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 font-semibold rounded-md transition-all duration-300;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 font-semibold rounded-md border border-gray-700 transition-all duration-300;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent1);
+    color: var(--accent1);
+  }
+
+  /* Stats items */
+  .stats-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+  }
+
+  .stats-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px);
+  }
+
+  /* Timeline dot */
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #fbbf24;
+    box-shadow: 0 0 12px #fbbf24;
+  }
+
+  /* Accordion */
+  .accordion-button {
+    @apply w-full text-left py-3 focus:outline-none;
+    transition: color 0.2s ease;
+  }
+
+  .accordion-button:hover {
+    color: var(--accent2);
+  }
+
+  /* Testimonials */
+  .testimonial {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .testimonial:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Footer */
+  footer {
+    @apply py-12 border-t border-gray-800 text-center text-gray-400;
+  }
+
+  footer a:hover {
+    color: var(--accent2);
+  }
+
+  /* Fade-in animation utility */
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
