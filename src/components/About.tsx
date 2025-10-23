@@ -6,7 +6,7 @@ return (
 <div className="grid md:grid-cols-3 gap-8 items-center overflow-x-hidden">
 <div className="md:col-span-1">
 <div className="rounded-lg overflow-hidden">
-<Image src="/avatar.jpg" alt="Shajeel" width={420} height={420} className="object-cover w-full h-full" />
+<Image src="/avatar.jpg" alt="Amir" width={420} height={420} className="object-cover w-full h-full" />
 </div>
 </div>
 <div className="md:col-span-2">
