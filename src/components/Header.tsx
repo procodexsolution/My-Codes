@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Sun, Moon, Menu, X } from "lucide-react";
+import { Calendar, Sun, Moon, Menu, X, Phone } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -78,7 +78,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-5 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden "
+      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-4 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden "
     >
       <div className="mx-auto flex items-center justify-between ">
         {/* Logo */}
@@ -91,7 +91,7 @@ export default function Header() {
               className="object-cover rounded-full"
             />
           </div>
-          <span className="font-bold text-lg text-white">Muhammad Amir</span>
+          <span className="font-bold text-lg text-white">Amir</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -115,7 +115,7 @@ export default function Header() {
             href="#contact"
             className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-300 transition"
           >
-            <Calendar size={16} /> Contact Us
+            <Phone size={16} /> Contact Us
           </Link>
 
           <button

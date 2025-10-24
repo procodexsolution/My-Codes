@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-export default function Hero() {
+export default function About() {
   return (
     <section className="pt-32 md:pt-40 pb-20 overflow-x-hidden text-center">
       <div className="container mx-auto px-4">
