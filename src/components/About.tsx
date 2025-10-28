@@ -1,69 +1,104 @@
-'use client'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { Channel } from 'diagnostics_channel'
+import { Briefcase, CheckCircle, Laptop, Settings } from 'lucide-react'
 
 export default function About() {
+  const skills = [
+    'Full-Stack Web Development',
+    'Mobile App Development (Flutter, React Native)',
+    'AI Integration & Chatbot Development',
+    'Content Creation & YouTube (59k+ Subscribers)',
+    'Freelancing & Business Development',
+    'Educational Content & Training',
+    'React, Next.js & TypeScript',
+    'Node.js Development',
+    'Database Design (MongoDB, PostgreSQL)',
+    'Cloud Services (AWS, GCP)',
+    'RevenueCat and Stripe Integration',
+    'API Development & Integration',
+    'Generative AI & Machine Learning',
+    'SaaS Development & Architecture',
+    'Community Building & Management',
+    'Mentoring & Coaching Developers'
+  ]
+
   return (
-    <section className="pt-32 md:pt-40 pb-20 overflow-x-hidden text-center">
-      <div className="container mx-auto px-4">
-        {/* Top Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-3 bg-[#1a1a1a]/80 text-gray-300 px-5 py-2 rounded-full border border-gray-700/60 text-sm hover:border-yellow-400/80 group transition-all duration-300 backdrop-blur-sm"
-        >
-          <span className="font-medium">WordPress Developer</span>
-          <div className="h-5 w-[1px] bg-gray-700/60" />
-          <motion.div
-            whileHover={{ x: 5 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-            className="flex items-center justify-center h-7 w-7 rounded-full bg-black hover:bg-gray-800 transition"
-          >
-            <ArrowRight
-              size={16}
-              className="text-gray-400 group-hover:text-yellow-400 transition-all duration-300"
+    <section className=" text-white py-16">
+      <div className="max-w-6xl mx-auto px-5">
+        <h2 className="text-5xl font-bold text-center mb-12 tracking-tight">About Me</h2>
+
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          {/* Left Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <img
+              src="/3.png"
+              alt="About"
+              className="rounded-2xl shadow-lg w-full max-w-[420px] object-cover"
             />
-          </motion.div>
-        </motion.div>
+          </div>
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-[40px] sm:text-[58px] md:text-[72px] lg:text-[84px] font-normal leading-tight md:leading-[84px] mt-8"
-        >
-          <span className="animated-gradient-text">Creative Developer</span>
-          <br className="hidden sm:block" />
-          <span> &amp; </span>
-          <span className="animated-gradient-text">Content Creator</span>
-        </motion.h1>
+          {/* Right Content */}
+          <div className="w-full lg:w-1/2">
+            <h3 className="text-2xl font-semibold mb-3 leading-snug">
+              Hi, I'm <span className="text-white font-bold">Muhammad Amir</span> —{' '}
+              <span className="text-yellow-500">Developer & Content Creator</span>
+            </h3>
 
-        <p className="mt-6 text-gray-400 text-sm sm:text-base max-w-2xl mx-auto px-2">
-          I build performant web experiences and create technical content —
-          TypeScript, React, Next.js and more.
-        </p>
+            <p className="text-gray-300 leading-relaxed text-[14px] mb-5">
+              I'm a Full-Stack Developer with 10+ years of experience in freelancing, programming, and AI.
+              I create developer content on YouTube with 59k+ subscribers, helping developers level up
+              their skills through practical tutorials and insights.
+            </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            className="px-6 py-3 rounded-md bg-yellow-400 text-black font-semibold w-full sm:w-auto hover:opacity-90 transition-transform hover:-translate-y-0.5"
-            href="#"
-          >
-            Hire me
-          </a>
-          <a
-            className="px-6 py-3 rounded-md border border-gray-700 text-gray-300 w-full sm:w-auto hover:bg-gray-800 transition-all"
-            href="#"
-          >
-            See Projects
-          </a>
-        </div>
+            <h4 className="text-base font-semibold mb-3">I specialize in:</h4>
 
-        <div className="mt-12">
-          <div className="mx-auto w-full sm:w-3/4 h-40 sm:h-52 md:h-64 bg-gradient-to-r from-purple-700 to-sky-500 rounded-xl shadow-lg" />
+            {/* Skills Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2">
+              {skills.map((skill, i) => (
+                <div key={i} className="flex items-center gap-2 text-gray-300 text-[14px]">
+                  <CheckCircle className="text-green-400 w-3.5 h-3.5 flex-shrink-0" />
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Text */}
+            <p className="text-gray-400 mt-6 text-[14px] leading-relaxed">
+              Based in Lahore, Dubai & Remote (Dubai Digital Nomad VISA Holder),
+              I'm passionate about solving real-world problems through code and sharing
+              knowledge with the developer community. Let's build something amazing together!
+            </p>
+
+
+            {/* === Buttons Section === */}
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+              <a
+                href="#contact"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-300 transition w-full sm:w-auto"
+              >
+                <Briefcase size={18} />
+                Hire Me
+              </a>
+
+              <a
+                href="#services"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition text-sm w-full sm:w-auto"
+              >
+                <Settings size={18} />
+                View My Services
+              </a>
+
+              <a
+                href="#channel"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition text-sm w-full sm:w-auto"
+              >
+                <Briefcase size={18} />
+                View Channel
+              </a>
+            </div>
+
+          </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

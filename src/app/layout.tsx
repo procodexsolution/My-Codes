@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 
 
 export const metadata = {
-    title: 'Muhammad Amir — Wordpress Developer',
+    title: 'Amir - Software Engineer',
     description: 'Wordpress Developer & Content Creator',
 }
 
