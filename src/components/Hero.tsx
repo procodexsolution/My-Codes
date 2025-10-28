@@ -5,7 +5,7 @@ import { Briefcase, ChevronLeft, ChevronRight, Laptop, Pause, Play, Settings } f
 
 export default function Hero() {
   const images = [
-    '/projects/1.jpg',
+    '/1.jpg',
     '/projects/2.jpg',
     '/projects/3.jpg',
     '/projects/4.jpg',
@@ -130,8 +130,8 @@ export default function Hero() {
         </div>
 
         {/* === Carousel Section === */}
-        <div className="relative mt-16 w-full max-w-4xl mx-auto rounded-2xl p-[2px] bg-gradient-to-r from-white/40 to-white/10 shadow-lg">
-          <div className="relative rounded-2xl overflow-hidden m-[5px]">
+        <div className="relative mt-16 w-full max-w-4xl mx-auto rounded-2xl p-[2px] border border-[#404040] shadow-lg">
+          <div className="relative rounded-xl overflow-hidden m-[5px]">
             <AnimatePresence mode="wait">
               <motion.img
                 key={index}
