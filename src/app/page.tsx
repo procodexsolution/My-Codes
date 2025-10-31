@@ -2,6 +2,9 @@ import Hero from '../components/Hero'
 import Stats from '@/components/Stats'
 import About from '../components/About'
 import Skills from '../components/Skills'
+import TechSlider from '@/components/logo'
+import LogoMarquee from '@/components/logo'
+import ProjectsTimeline from '@/components/timeline'
 
 export default function Home() {
   return (
@@ -19,7 +22,17 @@ export default function Home() {
         <div>
           <About />
         </div>
-      </section>
+        </section>
+        <section>
+          <div>
+            <LogoMarquee />
+          </div>
+        </section>
+        <section>
+          <div>
+            <ProjectsTimeline />
+          </div>
+        </section>
     </div>
   )
 }

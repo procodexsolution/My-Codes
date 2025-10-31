@@ -6,11 +6,11 @@ import { Briefcase, ChevronLeft, ChevronRight, Laptop, Pause, Play, Settings } f
 export default function Hero() {
   const images = [
     '/1.jpg',
-    '/projects/2.jpg',
-    '/projects/3.jpg',
-    '/projects/4.jpg',
-    '/projects/5.jpg',
-    '/projects/6.jpg',
+    '/1.jpg',
+    '/1.jpg',
+    '/1.jpg',
+    '/1.jpg',
+    '/1.jpg',
   ]
 
   const [index, setIndex] = useState(0)

@@ -39,7 +39,7 @@ export default function About() {
           {/* Right Content */}
           <div className="w-full lg:w-1/2">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Hi, I'm <span className="text-white font-bold">Muhammad Amir</span> —{' '}
+              Hi, I'm <span className="text-white font-bold">.</span> —{' '}
               <span className="text-yellow-500">Developer & Content Creator</span>
             </h3>
 

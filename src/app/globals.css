@@ -234,5 +234,23 @@ body,
   );
   animation: shine 1s forwards;
 }
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
+.marquee {
+  display: flex;
+  animation: scroll-marquee 20s linear infinite;
+  will-change: transform;
+}
 
+.marquee-reverse {
+  display: flex;
+  animation: scroll-marquee 20s linear infinite reverse;
+  will-change: transform;
+}

@@ -91,7 +91,7 @@ export default function Header() {
               className="object-cover rounded-full"
             />
           </div>
-          <span className="font-bold text-lg text-white">Amir</span>
+          <span className="font-bold text-lg text-white">.</span>
         </Link>
 
         {/* Desktop Nav */}
