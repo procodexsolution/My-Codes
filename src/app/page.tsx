@@ -1,11 +1,10 @@
 import Hero from '../components/Hero'
 import Stats from '@/components/Stats'
 import About from '../components/About'
-import Skills from '../components/Skills'
-import TechSlider from '@/components/logo'
 import LogoMarquee from '@/components/logo'
 import ProjectsTimeline from '@/components/timeline'
 import FAQSection from '@/components/Faqs'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -37,6 +36,11 @@ export default function Home() {
         <section>
           <div>
             <FAQSection />
+          </div>
+        </section>
+        <section>
+          <div>
+            <Footer />
           </div>
         </section>
     </div>

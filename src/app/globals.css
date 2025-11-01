@@ -58,11 +58,6 @@ body,
   .container {
     @apply max-w-6xl mx-auto px-6;
   }
-
-  section {
-    @apply py-16 md:py-16;
-  }
-
   /* Card glass effect */
   .card {
     background: rgba(255, 255, 255, 0.04);

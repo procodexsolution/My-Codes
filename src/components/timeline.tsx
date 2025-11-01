@@ -88,7 +88,7 @@ export default function ProjectsTimeline() {
   ]
 
   return (
-    <section className="bg-[#0b0b0b] text-white py-0 max-w-[800px] mx-auto">
+    <section className="bg-[#0b0b0b] text-white py-25 max-w-[800px] mx-auto">
       <div className="max-w-4xl mx-auto px-4 text-center mb-10">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Project{' '}

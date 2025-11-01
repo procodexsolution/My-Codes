@@ -137,7 +137,7 @@ export default function LogoMarqueeSection() {
         {[...logos, ...logos].map((src, i) => (
           <div
             key={i}
-            className="flex-shrink-0 bg-[#111] border border-rgba(27.094% 0 0) rounded-xl shadow-sm 
+            className="flex-shrink-0 bg-[#111] border border-[#454545] rounded-xl shadow-sm 
                        p-1.5 w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[65px] md:h-[65px]
                        flex items-center justify-center hover:border-blue-500 transition-all duration-200"
           >
@@ -155,7 +155,7 @@ export default function LogoMarqueeSection() {
   )
 
   return (
-    <section className="bg-[#1E1E1E] text-white py-0 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="bg-[#1E1E1E] text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Expertise Across

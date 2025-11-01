@@ -52,7 +52,7 @@ export default function About() {
   ]
 
   return (
-    <section ref={aboutRef} className="text-white py-0 fade-up">
+    <section ref={aboutRef}className="text-white py-12 sm:py-16 md:py-20 lg:py-24 fade-up">
       <div className="max-w-6xl mx-auto px-5">
         <h2 className="text-5xl font-bold text-center mb-12 tracking-tight fade-up">About Me</h2>
 

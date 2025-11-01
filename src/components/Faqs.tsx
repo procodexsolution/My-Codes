@@ -165,7 +165,7 @@ export default function FAQSection() {
   }, [])
 
   return (
-    <section className="bg-[#0b0b0b] text-white py-0">
+    <section className="bg-[#0b0b0b] text-white py-8 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading - Centered */}
         <div className="text-center mb-10">
