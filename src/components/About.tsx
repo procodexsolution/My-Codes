@@ -1,7 +1,37 @@
-import { Channel } from 'diagnostics_channel'
-import { Briefcase, CheckCircle, Laptop, Settings } from 'lucide-react'
+'use client'
+import { useEffect, useRef } from 'react'
+import { Briefcase, CheckCircle, Settings } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function About() {
+  const aboutRef = useRef(null)
+
+  useEffect(() => {
+    const el = aboutRef.current
+    if (!el) return
+
+    // Animate section fade-in + upward motion with scrub
+    gsap.fromTo(
+      el.querySelectorAll('.fade-up'),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true, // 👈 makes it smooth scrolling-based animation
+        },
+      }
+    )
+  }, [])
+
   const skills = [
     'Full-Stack Web Development',
     'Mobile App Development (Flutter, React Native)',
@@ -22,13 +52,13 @@ export default function About() {
   ]
 
   return (
-    <section className=" text-white py-16">
+    <section ref={aboutRef} className="text-white py-0 fade-up">
       <div className="max-w-6xl mx-auto px-5">
-        <h2 className="text-5xl font-bold text-center mb-12 tracking-tight">About Me</h2>
+        <h2 className="text-5xl font-bold text-center mb-12 tracking-tight fade-up">About Me</h2>
 
-        <div className="flex flex-col lg:flex-row items-center gap-8">
+        <div className="flex flex-col lg:flex-row items-center gap-8 fade-up">
           {/* Left Image */}
-          <div className="w-full lg:w-1/2 flex justify-center">
+          <div className="w-full lg:w-1/2 flex justify-center fade-up">
             <img
               src="/3.png"
               alt="About"
@@ -37,10 +67,10 @@ export default function About() {
           </div>
 
           {/* Right Content */}
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 fade-up">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
               Hi, I'm <span className="text-white font-bold">.</span> —{' '}
-              <span className="text-yellow-500">Developer & Content Creator</span>
+              <span className="text-[#FDC700]">Developer & Content Creator</span>
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-[14px] mb-5">
@@ -52,7 +82,7 @@ export default function About() {
             <h4 className="text-base font-semibold mb-3">I specialize in:</h4>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 fade-up">
               {skills.map((skill, i) => (
                 <div key={i} className="flex items-center gap-2 text-gray-300 text-[14px]">
                   <CheckCircle className="text-green-400 w-3.5 h-3.5 flex-shrink-0" />
@@ -62,18 +92,17 @@ export default function About() {
             </div>
 
             {/* Bottom Text */}
-            <p className="text-gray-400 mt-6 text-[14px] leading-relaxed">
+            <p className="text-gray-400 mt-6 text-[14px] leading-relaxed fade-up">
               Based in Lahore, Dubai & Remote (Dubai Digital Nomad VISA Holder),
               I'm passionate about solving real-world problems through code and sharing
               knowledge with the developer community. Let's build something amazing together!
             </p>
 
-
             {/* === Buttons Section === */}
-            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto fade-up">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-300 transition w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-[#FDC700] text-black font-semibold rounded-md hover:bg-yellow-300 transition w-full sm:w-auto"
               >
                 <Briefcase size={18} />
                 Hire Me
@@ -81,7 +110,7 @@ export default function About() {
 
               <a
                 href="#services"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition text-sm w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-[#FDC700] text-[#FDC700] font-semibold rounded-md hover:bg-[#FDC700] hover:text-black transition text-sm w-full sm:w-auto"
               >
                 <Settings size={18} />
                 View My Services
@@ -89,16 +118,15 @@ export default function About() {
 
               <a
                 href="#channel"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition text-sm w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-[#FDC700] text-[#FDC700] font-semibold rounded-md hover:bg-[#FDC700] hover:text-black transition text-sm w-full sm:w-auto"
               >
                 <Briefcase size={18} />
                 View Channel
               </a>
             </div>
-
           </div>
         </div>
       </div>
-    </section >
+    </section>
   )
 }

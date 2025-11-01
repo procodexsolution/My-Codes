@@ -60,7 +60,7 @@ body,
   }
 
   section {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-16;
   }
 
   /* Card glass effect */
@@ -253,4 +253,31 @@ body,
   display: flex;
   animation: scroll-marquee 20s linear infinite reverse;
   will-change: transform;
+}
+/* app/globals.css */
+
+.vertical-timeline-element:nth-child(odd) .vertical-timeline-element-date {
+  top: 0 !important;
+  left: 135% !important;
+  text-align: left;
+}
+
+.vertical-timeline-element:nth-child(even) .vertical-timeline-element-date {
+  top: 0 !important;
+  left: -135% !important;
+  text-align: right;
+}
+/* Timeline cards: full-width up to 1199px, capped at ~480px for readability */
+@media (max-width: 1199px) {
+  .vertical-timeline-element-content {
+    max-width: 100% !important;
+    width: auto !important;
+  }
+}
+
+/* Optional: On very large screens, cap width for readability */
+@media (min-width: 1200px) {
+  .vertical-timeline-element-content {
+    max-width: 480px !important;
+  }
 }

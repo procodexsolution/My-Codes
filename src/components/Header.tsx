@@ -11,13 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   const headerRef = useRef<HTMLHeadElement>(null);
 
-  // Toggle dark mode
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+
 
   // GSAP scroll animation
   useEffect(() => {
@@ -83,9 +79,9 @@ export default function Header() {
       <div className="mx-auto flex items-center justify-between ">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-8 h-8">
+          <div className="relative w-10 h-10">
             <Image
-              src="/avatar.png"
+              src="/logo.jpg"
               alt="Amir"
               fill
               className="object-cover rounded-full"
@@ -117,13 +113,6 @@ export default function Header() {
           >
             <Phone size={16} /> Contact Us
           </Link>
-
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full hover:bg-white/10 transition text-gray-300"
-          >
-            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -161,21 +150,7 @@ export default function Header() {
                 <Calendar size={16} /> Contact Us
               </Link>
 
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="flex items-center justify-center gap-2 py-3 border border-gray-700 rounded-lg hover:bg-white/10 transition text-gray-200"
-              >
-                {darkMode ? (
-                  <>
-                    <Sun size={18} /> Light Mode
-                  </>
-                ) : (
-                  <>
-                    <Moon size={18} /> Dark Mode
-                  </>
-                )}
-              </button>
-            </div>
+          </div>
           </nav>
         </div>
       )}

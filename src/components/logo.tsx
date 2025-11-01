@@ -155,12 +155,12 @@ export default function LogoMarqueeSection() {
   )
 
   return (
-    <section className="bg-[#1E1E1E] text-white py-14 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="bg-[#1E1E1E] text-white py-0 sm:py-20 lg:py-24 overflow-hidden">
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Expertise Across
           <br />
-          <span className="text-blue-500 animated-gradient-text">Modern Technologies</span> & Frameworks
+          <span className="animated-gradient-text">Modern Technologies</span> & Frameworks
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg mt-4">
           Building scalable solutions with cutting-edge tools across web, mobile, AI, and cloud technologies.

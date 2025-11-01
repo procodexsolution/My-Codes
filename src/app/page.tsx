@@ -5,6 +5,7 @@ import Skills from '../components/Skills'
 import TechSlider from '@/components/logo'
 import LogoMarquee from '@/components/logo'
 import ProjectsTimeline from '@/components/timeline'
+import FAQSection from '@/components/Faqs'
 
 export default function Home() {
   return (
@@ -31,6 +32,11 @@ export default function Home() {
         <section>
           <div>
             <ProjectsTimeline />
+          </div>
+        </section>
+        <section>
+          <div>
+            <FAQSection />
           </div>
         </section>
     </div>
