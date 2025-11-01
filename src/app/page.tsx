@@ -5,6 +5,7 @@ import LogoMarquee from '@/components/logo'
 import ProjectsTimeline from '@/components/timeline'
 import FAQSection from '@/components/Faqs'
 import Footer from '@/components/Footer'
+import Blogs from '@/components/Blogs'
 
 export default function Home() {
   return (
@@ -31,6 +32,11 @@ export default function Home() {
         <section>
           <div>
             <ProjectsTimeline />
+          </div>
+        </section>
+        <section>
+          <div>
+            <Blogs />
           </div>
         </section>
         <section>

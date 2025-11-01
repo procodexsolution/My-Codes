@@ -91,7 +91,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-gray-300">
-          {["About", "Services", "Blog", "AI Chat", "FAQ", "Links"].map(
+          {["About", "Projects", "Blog", "AI Chat", "FAQ", "Links"].map(
             (item) => (
               <Link
                 key={item}
