@@ -60,7 +60,15 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </Link>
 
         <h1 className="text-3xl md:text-5xl font-bold mb-4">{blog.title}</h1>
-        <p className="text-gray-400 mb-8">{blog.shortDescription}</p>
+        <p className="text-gray-400 mb-4">{blog.shortDescription}</p>
+        <h2 className="text-gray-400 text-sm mb-8">
+          {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </h2>
+
 
         {blog.image && (
           <div className="relative w-full h-72 md:h-[450px] rounded-xl overflow-hidden mb-10">
