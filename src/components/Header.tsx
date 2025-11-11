@@ -114,7 +114,7 @@ export default function Header() {
         {/* Desktop Right */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="#contact"
+            href="/contact"
             className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-300 transition"
           >
             <Phone size={16} /> Contact Us
