@@ -25,7 +25,7 @@ export default function About() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 80%',
+          start: 'top 100%',
           end: 'bottom 20%',
           scrub: true, // 👈 makes it smooth scrolling-based animation
         },
@@ -53,7 +53,7 @@ export default function About() {
   ]
 
   return (
-    <section ref={aboutRef}className="text-white py-12 sm:py-16 md:py-20 lg:py-24 fade-up">
+    <section id='about' ref={aboutRef}className="text-white py-12 sm:py-16 md:py-20 lg:py-24 fade-up">
       <div className="max-w-6xl mx-auto px-5">
         <h2 className="text-5xl font-bold text-center mb-12 tracking-tight fade-up">About Me</h2>
 
@@ -72,7 +72,7 @@ export default function About() {
           {/* Right Content */}
           <div className="w-full lg:w-1/2 fade-up">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Hi, I`m <span className="text-white font-bold">.</span> —{' '}
+              Hi, I`m Muhammad Amir<span className="text-white font-bold">.</span> —{' '}
               <span className="text-[#FDC700]">Developer & Content Creator</span>
             </h3>
 

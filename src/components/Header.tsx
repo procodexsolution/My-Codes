@@ -85,23 +85,31 @@ export default function Header() {
               className="object-cover rounded-full"
             />
           </div>
-          <span className="font-bold text-lg text-white">.</span>
+          <span className="font-bold text-lg text-white">Amir</span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-gray-300">
-          {["About", "Projects", "Blog", "AI Chat", "FAQ", "Links"].map(
-            (item) => (
-              <Link
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                className="hover:text-white transition"
-              >
-                {item}
-              </Link>
-            )
-          )}
+          {[
+            { name: "About", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#about` },       // scrolls to section
+            { name: "Projects", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#projects` }, // scrolls to section
+            { name: "Blog", href: "/blogs" },         // goes to page
+            { name: "AI Chat", href: "/ai-chat" },   // goes to page
+            { name: "FAQ", href: "#faq" },           // scrolls to section
+            { name: "Links", href: "/links" },       // goes to page
+          ].map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="hover:text-white transition"
+              scroll={item.href.startsWith("#") ? false : true} // prevents scroll to top for anchor links
+            >
+              {item.name}
+            </Link>
+          ))}
         </nav>
+
+
 
         {/* Desktop Right */}
         <div className="hidden md:flex items-center gap-3">
@@ -148,7 +156,7 @@ export default function Header() {
                 <Calendar size={16} /> Contact Us
               </Link>
 
-          </div>
+            </div>
           </nav>
         </div>
       )}
