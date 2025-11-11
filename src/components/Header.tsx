@@ -95,7 +95,7 @@ export default function Header() {
             { name: "Projects", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#projects` }, // scrolls to section
             { name: "Blog", href: "/blogs" },         // goes to page
             { name: "AI Chat", href: "/ai-chat" },   // goes to page
-            { name: "FAQ", href: "#faq" },           // scrolls to section
+            { name: "FAQ", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#faqs` },           // scrolls to section
             { name: "Links", href: "/links" },       // goes to page
           ].map((item) => (
             <Link

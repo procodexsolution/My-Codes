@@ -18,6 +18,7 @@ export default function AllBlogs() {
   };
 
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [visibleCount, setVisibleCount] = useState(12); // show first 12 by default
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -36,9 +37,25 @@ export default function AllBlogs() {
     fetchBlogs();
   }, []);
 
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 12); // load 12 more posts each click
+  };
+
   return (
     <section className="bg-[#0b0b0b] text-white md:py-20">
       <div className="max-w-6xl mx-auto px-6 text-center py-16">
+
+        {/* Back to Home */}
+        <div className="mb-6 text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center text-yellow-400 font-medium hover:text-yellow-300 transition"
+          >
+            ← Back to Home
+          </Link>
+        </div>
+
+
         <h1 className="text-4xl md:text-5xl font-bold">
           All <span className="animated-gradient-text">Blog Posts</span>
         </h1>
@@ -47,14 +64,15 @@ export default function AllBlogs() {
           development and design practices.
         </p>
 
+        {/* Blog Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => {
+          {blogs.slice(0, visibleCount).map((blog) => {
             const formattedDate = blog.publishedAt
               ? new Date(blog.publishedAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
               : "No date available";
 
             return (
@@ -99,6 +117,18 @@ export default function AllBlogs() {
             );
           })}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < blogs.length && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={loadMore}
+              className="px-6 py-3 border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

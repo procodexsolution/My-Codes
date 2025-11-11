@@ -42,7 +42,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     return (
       <div className="text-center py-20 text-gray-400">
         <h1 className="text-3xl font-bold mb-4">Blog Not Found</h1>
-        <Link href="/blogs" className="text-yellow-400 hover:underline">
+        <Link href="/blogs" className="text-yellow-400">
           ← Back to Blogs
         </Link>
       </div>
@@ -50,14 +50,18 @@ export default async function BlogPage({ params }: BlogPageProps) {
   }
 
   return (
-    <section className="bg-[#0b0b0b] text-white min-h-screen py-16 px-6">
+    <section className="bg-[#0b0b0b] text-white min-h-screen py-30 px-6">
       <div className="max-w-4xl mx-auto">
-        <Link
-          href="/blogs"
-          className="inline-flex items-center text-yellow-400 mb-8 hover:underline"
-        >
-          <ArrowLeft size={18} className="mr-2" /> Back to Blogs
-        </Link>
+        {/* Back to Home */}
+<div className="mb-6 text-left">
+  <Link
+    href="/"
+    className="inline-flex items-center text-yellow-400 font-medium hover:text-yellow-300 transition"
+  >
+    ← Back to Home
+  </Link>
+</div>
+
 
         <h1 className="text-3xl md:text-5xl font-bold mb-4">{blog.title}</h1>
         <p className="text-gray-400 mb-4">{blog.shortDescription}</p>
