@@ -45,7 +45,7 @@ export default function Hero() {
         {/* === Available Button on Top === */}
         <div className="mb-6 flex justify-center">
           <a
-            href="#contact"
+            href="/contact"
             className="group relative flex items-center gap-2 px-6 py-2 rounded-full border border-white bg-gray-800 text-white font-medium hover:bg-gray-700 transition text-sm sm:text-base overflow-hidden"
           >
             {/* ICON SLIDE EFFECT */}
@@ -119,7 +119,7 @@ export default function Hero() {
         {/* === Buttons Section === */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#contact"
+            href="/contact"
             className="flex items-center gap-2 px-8 py-3 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-300 transition"
           >
             <Briefcase size={18} />

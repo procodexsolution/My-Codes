@@ -104,7 +104,7 @@ export default function About() {
             {/* === Buttons Section === */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto fade-up">
               <a
-                href="#contact"
+                href="/contact"
                 className="flex items-center justify-center gap-2 px-4 py-2 bg-[#FDC700] text-black font-semibold rounded-md hover:bg-yellow-300 transition w-full sm:w-auto"
               >
                 <Briefcase size={18} />
