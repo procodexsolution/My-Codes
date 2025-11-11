@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image"
+
 export default function Footer() {
   return (
     <footer className="bg-[#0b0b0b] text-white border-t border-gray-800 py-10 px-4 sm:px-6">
@@ -11,9 +13,11 @@ export default function Footer() {
           {/* === Left Column: Logo + Info === */}
           <div>
             <div className="flex items-center space-x-3 mb-3">
-              <img
+              <Image
                 src="/logo.jpg"
                 alt="Amir"
+                height={100}
+                width={100}
                 className="w-10 h-10 rounded-full"
               />
               <h3 className="text-lg font-bold">Amir</h3>

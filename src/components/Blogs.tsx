@@ -5,8 +5,17 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 
+// ✅ Define the Blog type
+interface Blog {
+  _id: string;
+  title: string;
+  shortDescription: string;
+  slug: string;
+  image?: string;
+}
+
 export default function Blogs() {
-  const [blogs, setBlogs] = useState<any[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
     const fetchBlogs = async () => {

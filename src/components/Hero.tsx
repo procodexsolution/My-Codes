@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from 'framer-motion'
 import { Briefcase, ChevronLeft, ChevronRight, Laptop, Pause, Play, Settings } from 'lucide-react'
 
@@ -17,21 +17,27 @@ export default function Hero() {
   const [playing, setPlaying] = useState(true)
   const [showButton, setShowButton] = useState(true)
 
-  const nextSlide = () => setIndex((prev) => (prev + 1) % images.length)
-  const prevSlide = () =>
-    setIndex((prev) => (prev - 1 + images.length) % images.length)
+  // ✅ useCallback ensures this function reference doesn’t change on every render
+  const nextSlide = useCallback(() => {
+    setIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prevSlide = useCallback(() => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  // ✅ Now include nextSlide safely
+  useEffect(() => {
+    if (!playing) return;
+    const timer = setInterval(nextSlide, 3500);
+    return () => clearInterval(timer);
+  }, [playing, nextSlide]);
 
   useEffect(() => {
-    if (!playing) return
-    const timer = setInterval(nextSlide, 3500)
-    return () => clearInterval(timer)
-  }, [index, playing])
-
-  useEffect(() => {
-    setShowButton(false)
-    const t = setTimeout(() => setShowButton(true), 800)
-    return () => clearTimeout(t)
-  }, [index])
+    setShowButton(false);
+    const t = setTimeout(() => setShowButton(true), 800);
+    return () => clearTimeout(t);
+  }, [index]);
 
   return (
     <section className="pt-32 md:pt-40 pb-20 overflow-x-hidden">

@@ -5,6 +5,7 @@ import 'react-vertical-timeline-component/style.min.css'
 import { FaReact, FaDatabase, FaPython, FaCloud } from 'react-icons/fa'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -129,9 +130,11 @@ export default function ProjectsTimeline() {
             >
               <div className="mb-2 group relative overflow-hidden rounded-md">
                 <div className="aspect-[16/9] w-full bg-gray-800 overflow-hidden">
-                  <img
+                  <Image
                     src={proj.image}
                     alt={proj.title}
+                    height={100}
+                    width={100}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x450?text=Image+Not+Available'

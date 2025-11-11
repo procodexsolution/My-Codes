@@ -3,13 +3,20 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import type { PortableTextBlock } from "@portabletext/types";
 
+// Define the blog type
 interface Blog {
   title: string;
   shortDescription: string;
   publishedAt: string;
   image?: string;
-  body: any[];
+  body: PortableTextBlock[];
+}
+
+// Define the expected params type
+interface BlogPageProps {
+  params: Promise<{ slug: string }>; // ✅ Fix for Next.js App Router typing
 }
 
 async function getBlog(slug?: string | string[]): Promise<Blog | null> {
@@ -27,8 +34,9 @@ async function getBlog(slug?: string | string[]): Promise<Blog | null> {
   return blog || null;
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
-  const blog = await getBlog(params.slug);
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { slug } = await params; // ✅ must await because it's a Promise
+  const blog = await getBlog(slug);
 
   if (!blog) {
     return (

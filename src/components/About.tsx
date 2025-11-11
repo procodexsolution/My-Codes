@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { Briefcase, CheckCircle, Settings } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -59,9 +60,11 @@ export default function About() {
         <div className="flex flex-col lg:flex-row items-center gap-8 fade-up">
           {/* Left Image */}
           <div className="w-full lg:w-1/2 flex justify-center fade-up">
-            <img
+            <Image
               src="/3.png"
               alt="About"
+              height={100}
+              width={100}
               className="rounded-2xl shadow-lg w-full max-w-[420px] object-cover"
             />
           </div>
@@ -69,12 +72,12 @@ export default function About() {
           {/* Right Content */}
           <div className="w-full lg:w-1/2 fade-up">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Hi, I'm <span className="text-white font-bold">.</span> —{' '}
+              Hi, I`m <span className="text-white font-bold">.</span> —{' '}
               <span className="text-[#FDC700]">Developer & Content Creator</span>
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-[14px] mb-5">
-              I'm a Full-Stack Developer with 10+ years of experience in freelancing, programming, and AI.
+              I`m a Full-Stack Developer with 10+ years of experience in freelancing, programming, and AI.
               I create developer content on YouTube with 59k+ subscribers, helping developers level up
               their skills through practical tutorials and insights.
             </p>
@@ -94,8 +97,8 @@ export default function About() {
             {/* Bottom Text */}
             <p className="text-gray-400 mt-6 text-[14px] leading-relaxed fade-up">
               Based in Lahore, Dubai & Remote (Dubai Digital Nomad VISA Holder),
-              I'm passionate about solving real-world problems through code and sharing
-              knowledge with the developer community. Let's build something amazing together!
+              I`m passionate about solving real-world problems through code and sharing
+              knowledge with the developer community. Let`s build something amazing together!
             </p>
 
             {/* === Buttons Section === */}

@@ -12,7 +12,7 @@ export default function AllBlogs() {
     title: string;
     slug: { current: string };
     shortDescription?: string;
-    mainImage?: any;
+    mainImage?: string;
   };
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
