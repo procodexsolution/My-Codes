@@ -131,7 +131,12 @@ export default function LogoMarqueeSection() {
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
   ]
 
-  const LogoRow = ({ logos, reverse = false }) => (
+  type LogoRowProps = {
+    logos: string[];
+    reverse?: boolean;
+  };
+
+  const LogoRow: React.FC<LogoRowProps> = ({ logos, reverse = false }) => (
     <div className="relative w-full overflow-hidden">
       <div className={`flex ${reverse ? 'marquee-reverse' : 'marquee'} gap-4`}>
         {[...logos, ...logos].map((src, i) => (

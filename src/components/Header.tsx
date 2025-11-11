@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Sun, Moon, Menu, X, Phone } from "lucide-react";
+import { Calendar, Menu, X, Phone } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -68,7 +68,6 @@ export default function Header() {
 
     return () => {
       mm.revert();
-      ScrollTrigger.kill();
     };
   }, []);
   return (

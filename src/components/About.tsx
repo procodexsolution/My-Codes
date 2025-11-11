@@ -15,7 +15,7 @@ export default function About() {
 
     // Animate section fade-in + upward motion with scrub
     gsap.fromTo(
-      el.querySelectorAll('.fade-up'),
+      (el as HTMLElement).querySelectorAll('.fade-up'),
       { opacity: 0, y: 50 },
       {
         opacity: 1,

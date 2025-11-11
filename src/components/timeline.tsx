@@ -2,14 +2,14 @@
 import { useEffect, useRef } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import { FaReact, FaNodeJs, FaDatabase, FaPython, FaCloud } from 'react-icons/fa'
+import { FaReact, FaDatabase, FaPython, FaCloud } from 'react-icons/fa'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function ProjectsTimeline() {
-  const timelineRef = useRef(null)
+  const timelineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const elements = timelineRef.current?.querySelectorAll('.timeline-card')
@@ -134,7 +134,7 @@ export default function ProjectsTimeline() {
                     alt={proj.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500"
                     onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/800x450?text=Image+Not+Available'
+                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x450?text=Image+Not+Available'
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

@@ -69,7 +69,7 @@ const LightningIcon = () => (
 )
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqs = [
     {
