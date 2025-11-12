@@ -191,11 +191,12 @@ export default function Hero() {
                 >
                   <a
                     href="#projects"
-                    className="flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-semibold rounded shadow-lg hover:bg-yellow-300 transition text-sm sm:text-base"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-yellow-400 text-black font-semibold rounded shadow-lg hover:bg-yellow-300 transition text-sm sm:text-base w-full sm:w-auto text-center"
                   >
                     <Laptop size={18} />
-                    See Projects
+                    <span>See Projects</span>
                   </a>
+
                 </motion.div>
               )}
             </AnimatePresence>
