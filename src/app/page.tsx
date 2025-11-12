@@ -44,11 +44,6 @@ export default function Home() {
             <FAQSection />
           </div>
         </section>
-        <section>
-          <div>
-            <Footer />
-          </div>
-        </section>
     </div>
   )
 }

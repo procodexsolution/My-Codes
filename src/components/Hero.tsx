@@ -127,7 +127,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="#services"
+            href="/services"
             className="flex items-center gap-2 px-7 py-3 bg-transparent border border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-black transition text-sm"
           >
             <Settings size={18} />

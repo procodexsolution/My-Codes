@@ -112,7 +112,7 @@ export default function About() {
               </a>
 
               <a
-                href="#services"
+                href="/services"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-[#FDC700] text-[#FDC700] font-semibold rounded-md hover:bg-[#FDC700] hover:text-black transition text-sm w-full sm:w-auto"
               >
                 <Settings size={18} />
@@ -120,7 +120,7 @@ export default function About() {
               </a>
 
               <a
-                href="#channel"
+                href="/links"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-[#FDC700] text-[#FDC700] font-semibold rounded-md hover:bg-[#FDC700] hover:text-black transition text-sm w-full sm:w-auto"
               >
                 <Briefcase size={18} />

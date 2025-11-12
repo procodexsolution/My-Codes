@@ -176,7 +176,7 @@ export default function FAQSection() {
           <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
             Can’t find what you’re looking for? Feel free to{' '}
             <a
-              href="mailto:hello@example.com"
+              href="mailto:muhammadamir27901@gmail.com"
               className="text-yellow-400 hover:underline transition-colors"
             >
               contact me directly
