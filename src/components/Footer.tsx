@@ -23,15 +23,15 @@ export default function Footer() {
               <h3 className="text-lg font-bold">Amir</h3>
             </div>
             <p className="text-gray-400 text-xs mb-4 leading-relaxed max-w-md">
-              Developer & Trainer - Freelancing, Programming & AI. Top Rated Plus on Upwork with 10+ years experience.
+              Professional WordPress Developer | Tailored Themes, Plugins & WooCommerce | 5+ Years Experience.
             </p>
             <div className="space-y-2 text-xs text-gray-400">
               <div className="flex items-center space-x-2">
                 <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14v-7H5v7z" />
                 </svg>
-                <a href="mailto:muhammadamir27901@gmail.com" className="hover:text-[#fdc700] transition-colors">
-                  muhammadamir27901@gmail.com
+                <a href="mailto:prodeveloperamir@gmail.com" className="hover:text-[#fdc700] transition-colors">
+                  prodeveloperamir@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-2">
@@ -55,7 +55,6 @@ export default function Footer() {
                 <ul className="space-y-1 text-gray-400">
                   <li><a href="#" className="hover:text-[#fdc700] transition-colors">YouTube Channel</a></li>
                   <li><a href="#" className="hover:text-[#fdc700] transition-colors">Official Website</a></li>
-                  <li><a href="#" className="hover:text-[#fdc700] transition-colors">Newsletter</a></li>
                 </ul>
               </div>
 
@@ -74,7 +73,6 @@ export default function Footer() {
                 <ul className="space-y-1 text-gray-400">
                   <li><a href="#" className="hover:text-[#fdc700] transition-colors">Facebook Group</a></li>
                   <li><a href="#" className="hover:text-[#fdc700] transition-colors">WhatsApp Channel</a></li>
-                  <li><a href="#" className="hover:text-[#fdc700] transition-colors">Skool Community</a></li>
                 </ul>
               </div>
 
