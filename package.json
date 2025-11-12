@@ -19,6 +19,7 @@
     "next": "15.5.6",
     "next-sanity": "^11.6.5",
     "nodemailer": "^7.0.10",
+    "openai": "^6.8.1",
     "react": "19.1.0",
     "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
