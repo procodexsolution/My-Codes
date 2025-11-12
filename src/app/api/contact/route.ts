@@ -18,38 +18,68 @@ export async function POST(req: Request) {
       },
     });
 
-    // Modern HTML Email Template
-    const htmlContent = `
-      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; padding: 40px;">
-        <div style="max-width:600px; margin:auto; background:#ffffff; padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-          
+const htmlContent = `
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { margin:0; padding:0; background-color:#0b0b0b; font-family:Arial,sans-serif; color:#ffffff; }
+    table { border-collapse: collapse; width:100%; }
+    .container { max-width:600px; margin:20px auto; background:#141414; border-radius:12px; overflow:hidden; }
+    .header { text-align:center; padding:20px; font-size:28px; display:flex; align-items:center; justify-content:center; gap:10px; color:#FFD700; }
+    .content { padding:20px; font-size:16px; line-height:1.5; color:#e0e0e0; }
+    .label { font-weight:bold; color:#ffffff; }
+    .message-box { background:#1f1f1f; padding:15px; border-left:4px solid #FFD700; border-radius:4px; word-wrap:break-word; color:#e0e0e0; }
+    .footer { text-align:center; font-size:12px; color:#888; padding:15px; }
+
+    /* Mobile */
+    @media only screen and (max-width:600px){
+      .container { width:95% !important; margin:10px auto; }
+      .header { font-size:22px !important; }
+      .content { font-size:14px !important; }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" bgcolor="#0b0b0b" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table class="container">
           <!-- Header -->
-          <div style="text-align:center; margin-bottom:30px;">
-            <h1 style="color:#111; font-size:24px; margin:0;">📩 New Contact Message</h1>
-          </div>
+          <tr>
+            <td class="header">
+              <!-- SVG Mail Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#FFD700" viewBox="0 0 24 24">
+                <path d="M12 13.065L.122 4.5h23.756L12 13.065zM12 15.435L0 6v12h24V6l-12 9.435z"/>
+              </svg>
+              New Message
+            </td>
+          </tr>
 
-          <!-- User Details -->
-          <div style="margin-bottom:20px;">
-            <p style="margin:0 0 8px 0; font-size:16px;"><strong>Name:</strong> ${name}</p>
-            <p style="margin:0 0 8px 0; font-size:16px;"><strong>Email:</strong> ${email}</p>
-          </div>
-
-          <!-- Message -->
-          <div style="margin-bottom:30px;">
-            <p style="margin:0 0 8px 0; font-size:16px;"><strong>Message:</strong></p>
-            <div style="background:#f7f7f7; padding:15px; border-left:4px solid #ffd700; border-radius:8px; font-size:15px; color:#333;">
-              ${message}
-            </div>
-          </div>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p><span class="label">Name:</span> ${name}</p>
+              <p><span class="label">Email:</span> ${email}</p>
+              <p><span class="label">Message:</span></p>
+              <div class="message-box">${message}</div>
+            </td>
+          </tr>
 
           <!-- Footer -->
-          <div style="text-align:center; font-size:12px; color:#888;">
-            <p style="margin:0;">This message was sent from your website contact form.</p>
-            <p style="margin:0;">&copy; ${new Date().getFullYear()} Your Portfolio</p>
-          </div>
-        </div>
-      </div>
-    `;
+          <tr>
+            <td class="footer">
+              <p>This message was sent from your website contact form.</p>
+              <p>&copy; ${new Date().getFullYear()} Your Portfolio</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
 
     // Send email
     await transporter.sendMail({
