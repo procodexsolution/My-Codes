@@ -11,12 +11,28 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData); // Replace this with real submission logic
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    }
   };
+
 
   return (
     <section className="bg-[#0b0b0b] text-white min-h-screen py-30 px-6">
