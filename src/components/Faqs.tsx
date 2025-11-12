@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SiElementor, SiPhp, SiWoo, SiYoast } from 'react-icons/si'
+import { FaWordpress } from 'react-icons/fa'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -73,66 +75,68 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: 'Do you develop mobile apps as well as web applications?',
+      question: 'Do you develop custom WordPress themes?',
       answer:
-        'Yes, I build both native and cross-platform mobile apps (React Native, Flutter) alongside modern web applications using Next.js, React, and TypeScript.',
-      icon: <PhoneIcon />,
+        'Yes, I create fully custom WordPress themes with responsive design, dynamic templates, optimized performance, and modern best practices.',
+      icon: <FaWordpress />,
     },
     {
-      question: 'Can you build AI-powered chatbots and automation systems?',
+      question: 'Can you set up WooCommerce stores?',
       answer:
-        'Absolutely. I specialize in integrating LLMs like GPT, Claude, and custom models into chatbots, RAG pipelines, and workflow automation tools using Python, Node.js, and LangChain.',
-      icon: <RobotIcon />,
+        'Absolutely! I build complete WooCommerce stores with product management, secure checkout, payment gateways integration, and custom functionalities.',
+      icon: <SiWoo />,
     },
     {
-      question: 'Do you offer training or educational content creation services?',
+      question: 'Do you develop custom WordPress plugins?',
       answer:
-        'Yes, I create detailed technical tutorials, documentation, video courses, and interactive learning modules tailored to your audience — whether beginners or advanced developers.',
-      icon: <GraduationIcon />,
+        'Yes, I develop custom plugins to extend website functionalities, automate workflows, and tailor WordPress to specific client needs.',
+      icon: <SiPhp />,
     },
     {
-      question: 'What payment systems and e-commerce solutions do you implement?',
+      question: 'How do you optimize WordPress websites for SEO?',
       answer:
-        'I integrate Stripe, PayPal, Razorpay, and custom gateways. For e-commerce, I build stores with Next.js, Shopify, or headless commerce using platforms like Medusa or Saleor.',
+        'I implement both on-page and technical SEO strategies using tools like Yoast SEO, improving rankings, site speed, and performance.',
+      icon: <SiYoast />,
+    },
+    {
+      question: 'Can you design WordPress websites with page builders?',
+      answer:
+        'Yes, I use Elementor and other page builders to design modern, visually appealing, and fully responsive websites with smooth user experience.',
+      icon: <SiElementor />,
+    },
+    {
+      question: 'Do you integrate payment gateways for WordPress e-commerce?',
+      answer:
+        'I integrate Stripe, PayPal, Razorpay, and other custom gateways for WooCommerce or headless WordPress e-commerce platforms.',
       icon: <CreditCardIcon />,
     },
     {
-      question: 'Which cloud platforms and databases do you work with?',
+      question: 'Which hosting and cloud platforms do you recommend for WordPress?',
       answer:
-        'I’m experienced with AWS, Google Cloud, and Azure. Databases include PostgreSQL, MongoDB, Firebase, Supabase, and Redis — depending on scalability and use case.',
+        'I work with AWS, Google Cloud, and managed WordPress hosting solutions. I ensure performance, backups, security, and scalability.',
       icon: <CloudIcon />,
     },
     {
-      question: 'What is your experience level and track record on freelancing platforms?',
+      question: 'Do you provide WordPress maintenance and support?',
       answer:
-        'I have 5+ years of professional experience, 100+ completed projects, and consistently receive 5-star reviews on Upwork, Fiverr, and Toptal. My portfolio speaks for itself.',
+        'Yes, I offer ongoing website maintenance, updates, security checks, and performance optimization for WordPress sites.',
       icon: <StarIcon />,
     },
     {
-      question: 'Do you provide full-stack development or just frontend/backend?',
+      question: 'Can you migrate websites to WordPress?',
       answer:
-        'I offer full-stack solutions — from UI/UX design and frontend (React, Next.js) to backend (Node.js, Python, Go), APIs, databases, and deployment (Docker, Kubernetes, Vercel, AWS).',
+        'I handle seamless migrations from other platforms to WordPress, including content, databases, design, and SEO considerations.',
       icon: <GlobeIcon />,
     },
     {
-      question: 'Can you help with technical mentoring or code reviews?',
+      question: 'Do you offer training or tutorials for managing WordPress sites?',
       answer:
-        'Yes! I offer 1:1 mentoring, code review sessions, architecture consulting, and pair programming to help teams and individuals grow their skills and ship better software.',
-      icon: <MentorIcon />,
-    },
-    {
-      question: 'Are you available for in-person meetings or consultations?',
-      answer:
-        'I’m primarily remote, but I’m open to in-person meetings in major cities (e.g., Lahore, Karachi, Islamabad) or virtual consultations via Zoom, Google Meet, or Teams.',
-      icon: <LocationIcon />,
-    },
-    {
-      question: 'What makes your development approach different from other developers?',
-      answer:
-        'I focus on clean, maintainable code, performance optimization, and user-centric design. I prioritize communication, deadlines, and long-term scalability — not just "getting it done".',
-      icon: <LightningIcon />,
+        'Yes, I provide training sessions, documentation, and tutorials so clients can efficiently manage and update their WordPress websites.',
+      icon: <GraduationIcon />,
     },
   ]
+
+
 
   useEffect(() => {
     const faqItems = document.querySelectorAll('.faq-item')
@@ -204,9 +208,8 @@ export default function FAQSection() {
                 </div>
                 {/* ✅ Only arrow rotates */}
                 <svg
-                  className={`w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
+                  className={`w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

@@ -14,7 +14,6 @@ export default function About() {
     const el = aboutRef.current
     if (!el) return
 
-    // Animate section fade-in + upward motion with scrub
     gsap.fromTo(
       (el as HTMLElement).querySelectorAll('.fade-up'),
       { opacity: 0, y: 50 },
@@ -27,33 +26,27 @@ export default function About() {
           trigger: el,
           start: 'top 100%',
           end: 'bottom 20%',
-          scrub: true, // 👈 makes it smooth scrolling-based animation
+          scrub: true,
         },
       }
     )
   }, [])
 
   const skills = [
-    'Full-Stack Web Development',
-    'Mobile App Development (Flutter, React Native)',
-    'AI Integration & Chatbot Development',
-    'Content Creation & YouTube (59k+ Subscribers)',
-    'Freelancing & Business Development',
-    'Educational Content & Training',
-    'React, Next.js & TypeScript',
-    'Node.js Development',
-    'Database Design (MongoDB, PostgreSQL)',
-    'Cloud Services (AWS, GCP)',
-    'RevenueCat and Stripe Integration',
-    'API Development & Integration',
-    'Generative AI & Machine Learning',
-    'SaaS Development & Architecture',
-    'Community Building & Management',
-    'Mentoring & Coaching Developers'
+    'WordPress Website Development',
+    'Custom WordPress Themes',
+    'WooCommerce Store Setup & Management',
+    'Plugin Customization & Development',
+    'WordPress Performance Optimization',
+    'Website Migration & Maintenance',
+    'Security Hardening & Backups',
+    'SEO Setup & Optimization in WordPress',
+    'Page Builders (Elementor, WPBakery, Gutenberg)',
+    'Speed Optimization (Caching, Image Optimization)',
   ]
 
   return (
-    <section id='about' ref={aboutRef}className="text-white py-12 sm:py-16 md:py-20 lg:py-24 fade-up">
+    <section id='about' ref={aboutRef} className="text-white py-12 sm:py-16 md:py-20 lg:py-24 fade-up">
       <div className="max-w-6xl mx-auto px-5">
         <h2 className="text-5xl font-bold text-center mb-12 tracking-tight fade-up">About Me</h2>
 
@@ -72,17 +65,18 @@ export default function About() {
           {/* Right Content */}
           <div className="w-full lg:w-1/2 fade-up">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Hi, I`m Muhammad Amir<span className="text-white font-bold">.</span> —{' '}
-              <span className="text-[#FDC700]">Developer & Content Creator</span>
+              Hi, I’m Muhammad Amir<span className="text-white font-bold">.</span> —{' '}
+              <span className="text-[#FDC700]">WordPress Developer</span>
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-[14px] mb-5">
-              I`m a Full-Stack Developer with 10+ years of experience in freelancing, programming, and AI.
-              I create developer content on YouTube with 59k+ subscribers, helping developers level up
-              their skills through practical tutorials and insights.
+              "I'm a professional WordPress Developer with over 5 years of experience in building
+              fast, secure, and user-friendly websites. I specialize in creating custom WordPress
+              themes, WooCommerce stores, and optimized websites that perform exceptionally well
+              on both desktop and mobile."
             </p>
 
-            <h4 className="text-base font-semibold mb-3">I specialize in:</h4>
+            <h4 className="text-base font-semibold mb-3">My WordPress Expertise:</h4>
 
             {/* Skills Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 fade-up">
@@ -96,9 +90,9 @@ export default function About() {
 
             {/* Bottom Text */}
             <p className="text-gray-400 mt-6 text-[14px] leading-relaxed fade-up">
-              Based in Lahore, Dubai & Remote (Dubai Digital Nomad VISA Holder),
-              I`m passionate about solving real-world problems through code and sharing
-              knowledge with the developer community. Let`s build something amazing together!
+              "Based in Multan & available for remote work, I’m passionate about delivering
+              high-quality WordPress solutions — from small business websites to advanced
+              eCommerce stores. Let’s bring your website idea to life!"
             </p>
 
             {/* === Buttons Section === */}
@@ -117,14 +111,6 @@ export default function About() {
               >
                 <Settings size={18} />
                 View My Services
-              </a>
-
-              <a
-                href="/links"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-transparent border border-[#FDC700] text-[#FDC700] font-semibold rounded-md hover:bg-[#FDC700] hover:text-black transition text-sm w-full sm:w-auto"
-              >
-                <Briefcase size={18} />
-                View Channel
               </a>
             </div>
           </div>

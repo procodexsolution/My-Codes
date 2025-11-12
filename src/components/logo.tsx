@@ -168,7 +168,7 @@ export default function LogoMarqueeSection() {
           <span className="animated-gradient-text">Modern Technologies</span> & Frameworks
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg mt-4">
-          Building scalable solutions with cutting-edge tools across web, mobile, AI, and cloud technologies.
+          Building high-performance WordPress solutions with modern themes, plugins, and SEO-optimized websites.
         </p>
       </div>
 

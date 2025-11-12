@@ -2,10 +2,12 @@
 import { useEffect, useRef } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import { FaReact, FaDatabase, FaPython, FaCloud } from 'react-icons/fa'
+import { FaReact, FaDatabase, FaPython, FaCloud, FaWordpress } from 'react-icons/fa'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
+import { SiElementor, SiPhp, SiWoo } from 'react-icons/si'
+import { MdWeb } from 'react-icons/md'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,58 +37,55 @@ export default function ProjectsTimeline() {
     })
   }, [])
 
-  const projects = [
-    {
-      title: 'POS Desktop Application',
-      subtitle: 'C# / SQL Server',
-      description:
-        'A complete point-of-sale system with invoicing, ledgers, vouchers, and detailed reports for retail management.',
-      image:
-        'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80',
-      icon: <FaDatabase />,
-      color: '#00B4D8',
-    },
-    {
-      title: 'E-Commerce Platform',
-      subtitle: 'Next.js / Stripe / MongoDB',
-      description:
-        'A modern e-commerce store with user authentication, product management, and secure payment integration.',
-      image:
-        'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80',
-      icon: <FaReact />,
-      color: '#14B8A6',
-    },
-    {
-      title: 'AI Image Analyzer',
-      subtitle: 'Python / TensorFlow',
-      description:
-        'Built an AI-based image classification tool with real-time predictions, accuracy graphs, and reports.',
-      image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-      icon: <FaPython />,
-      color: '#FACC15',
-    },
-    {
-      title: 'Cloud Monitoring Dashboard',
-      subtitle: 'Node.js / AWS / Grafana',
-      description:
-        'Developed a real-time server monitoring dashboard with metrics visualization, alerts, and user analytics.',
-      image:
-        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
-      icon: <FaCloud />,
-      color: '#3B82F6',
-    },
-    {
-      title: 'Portfolio Website',
-      subtitle: 'Next.js / Tailwind CSS / Framer Motion',
-      description:
-        'Designed a personal portfolio with animations, project galleries, and GSAP-powered interactive sections.',
-      image:
-        'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
-      icon: <FaReact />,
-      color: '#06B6D4',
-    },
-  ]
+const projects = [
+  {
+    title: 'Custom WordPress Theme',
+    subtitle: 'WordPress / PHP / HTML5 / CSS3',
+    description:
+      'Built a fully custom WordPress theme from scratch with responsive design, dynamic templates, and optimized performance.',
+    image: '/wordpress.avif',
+    icon: <FaWordpress />,
+    color: '#21759B',
+  },
+  {
+    title: 'WooCommerce Store Setup',
+    subtitle: 'WooCommerce / WordPress / Stripe',
+    description:
+      'Developed a complete WooCommerce store with product management, secure checkout, and integrated payment gateways.',
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg',
+    icon: <SiWoo />,
+    color: '#8A2BE2',
+  },
+  {
+    title: 'WordPress SEO Optimization',
+    subtitle: 'WordPress / Yoast SEO / Analytics',
+    description:
+      'Enhanced website SEO using on-page and technical strategies, improving search engine rankings and site performance.',
+    image: '/seo.jpg',
+    icon: <MdWeb />,
+    color: '#F4B400',
+  },
+  {
+    title: 'WordPress Plugin Development',
+    subtitle: 'PHP / WordPress / Custom Plugins',
+    description:
+      'Created custom plugins to add new functionalities and automate processes tailored to client requirements.',
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    icon: <SiPhp />,
+    color: '#264DE4',
+  },
+  {
+    title: 'Portfolio & Blog Websites',
+    subtitle: 'WordPress / Elementor / Tailwind CSS',
+    description:
+      'Designed personal and business websites with modern layouts, animations, and user-friendly navigation using WordPress.',
+    image: '/portfolio.png',
+    icon: <SiElementor />,
+    color: '#FF0000',
+  },
+];
+
+
 
   return (
     <section id='projects' className="bg-[#0b0b0b] text-white py-25 max-w-[800px] mx-auto">

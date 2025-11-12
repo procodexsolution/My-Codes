@@ -6,11 +6,11 @@ import { Briefcase, ChevronLeft, ChevronRight, Laptop, Pause, Play, Settings } f
 export default function Hero() {
   const images = [
     '/1.jpg',
-    '/1.jpg',
-    '/1.jpg',
-    '/1.jpg',
-    '/1.jpg',
-    '/1.jpg',
+    '/2.png',
+    '/3.jpg',
+    '/4.webp',
+    '/5.webp',
+    '/6.jpg',
   ]
 
   const [index, setIndex] = useState(0)
@@ -108,12 +108,11 @@ export default function Hero() {
           <span className="animated-gradient-text">Developer</span>
           <br className="hidden sm:block" />
           <span> &amp; </span>
-          <span className="gradient-text">Content Creator</span>
+          <span className="gradient-text">Digital Creator</span>
         </motion.h1>
 
         <p className="mt-6 text-gray-400 text-sm sm:text-base max-w-2xl mx-auto px-2">
-          I build custom WordPress themes, optimize SEO, and deliver seamless
-          digital experiences that convert.
+          Crafting digital dreams into powerful websites • Code with purpose • Design with passion • Deliver with perfection
         </p>
 
         {/* === Buttons Section === */}
