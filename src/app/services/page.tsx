@@ -72,7 +72,7 @@ export default function ServicesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="text-yellow-400">Services</span>
+            My <span className="animated-gradient-text">Services</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             I craft digital experiences that combine design, technology, and
