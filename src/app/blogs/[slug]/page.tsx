@@ -1,7 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { PortableTextBlock } from "@portabletext/types";
 

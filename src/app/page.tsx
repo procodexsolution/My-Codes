@@ -4,7 +4,6 @@ import About from '../components/About'
 import LogoMarquee from '@/components/logo'
 import ProjectsTimeline from '@/components/timeline'
 import FAQSection from '@/components/Faqs'
-import Footer from '@/components/Footer'
 import Blogs from '@/components/Blogs'
 
 export default function Home() {
