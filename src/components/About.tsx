@@ -65,15 +65,15 @@ export default function About() {
           {/* Right Content */}
           <div className="w-full lg:w-1/2 fade-up">
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Hi, I’m Muhammad Amir<span className="text-white font-bold">.</span> —{' '}
+              Hi, I`m Muhammad Amir<span className="text-white font-bold">.</span> —{' '}
               <span className="text-[#FDC700]">WordPress Developer</span>
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-[14px] mb-5">
-              "I'm a professional WordPress Developer with over 5 years of experience in building
+              I`m a professional WordPress Developer with over 5 years of experience in building
               fast, secure, and user-friendly websites. I specialize in creating custom WordPress
               themes, WooCommerce stores, and optimized websites that perform exceptionally well
-              on both desktop and mobile."
+              on both desktop and mobile.
             </p>
 
             <h4 className="text-base font-semibold mb-3">My WordPress Expertise:</h4>
@@ -90,9 +90,9 @@ export default function About() {
 
             {/* Bottom Text */}
             <p className="text-gray-400 mt-6 text-[14px] leading-relaxed fade-up">
-              "Based in Multan & available for remote work, I’m passionate about delivering
+              Based in Multan & available for remote work, I`m passionate about delivering
               high-quality WordPress solutions — from small business websites to advanced
-              eCommerce stores. Let’s bring your website idea to life!"
+              eCommerce stores. Let`s bring your website idea to life!
             </p>
 
             {/* === Buttons Section === */}
