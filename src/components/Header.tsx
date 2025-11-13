@@ -13,8 +13,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLHeadElement>(null);
 
-
-
   // GSAP scroll animation
   useEffect(() => {
     const header = headerRef.current;
@@ -70,11 +68,12 @@ export default function Header() {
       mm.revert();
     };
   }, []);
+
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-4 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden ">
-      <div className="mx-auto flex items-center justify-between ">
+      className="fixed top-0 left-0 right-0 z-50 my-0 px-6 py-4 bg-transparent border border-transparent rounded-[0px] transition-none max-w-6xl mx-auto overflow-x-hidden">
+      <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="relative w-10 h-10">
@@ -109,8 +108,6 @@ export default function Header() {
           ))}
         </nav>
 
-
-
         {/* Desktop Right */}
         <div className="hidden md:flex items-center gap-3">
           <Link
@@ -134,28 +131,34 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden mt-4 pb-6 animate-fade-in shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
           <nav className="flex flex-col gap-3 text-gray-300 bg-black w-[100%] rounded-[15px] p-5 border border-[#404040] mx-auto shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
-            {["About", "Services", "Blog", "AI Chat", "FAQ", "Links"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="py-2 hover:text-white transition"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              )
-            )}
+            {/* Mobile Links (Using Desktop Links) */}
+            {[
+              { name: "About", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#about` },
+              { name: "Projects", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#projects` },
+              { name: "Blog", href: "/blogs" },
+              { name: "AI Chat", href: "/ai-chat" },
+              { name: "FAQ", href: `${process.env.NEXT_PUBLIC_DOMAIN}/#faqs` },
+              { name: "Links", href: "/links" },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="py-2 hover:text-white transition"
+                scroll={item.href.startsWith("#") ? false : true}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
 
             <div className="mt-6 flex flex-col gap-4">
               <Link
-                href="#contact"
+                href="/contact"
                 className="flex items-center justify-center gap-2 bg-yellow-400 text-black px-4 py-3 rounded-lg font-medium hover:bg-yellow-300 transition"
                 onClick={() => setMenuOpen(false)}
               >
                 <Calendar size={16} /> Contact Us
               </Link>
-
             </div>
           </nav>
         </div>

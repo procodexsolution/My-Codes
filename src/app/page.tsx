@@ -5,6 +5,7 @@ import LogoMarquee from '@/components/logo'
 import ProjectsTimeline from '@/components/timeline'
 import FAQSection from '@/components/Faqs'
 import Blogs from '@/components/Blogs'
+import Testimonials from '@/components/testimonial'
 
 export default function Home() {
   return (
@@ -36,6 +37,11 @@ export default function Home() {
         <section>
           <div>
             <Blogs />
+          </div>
+        </section>
+        <section>
+          <div>
+            <Testimonials />
           </div>
         </section>
         <section>

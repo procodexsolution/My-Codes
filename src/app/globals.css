@@ -276,3 +276,8 @@ body,
     max-width: 480px !important;
   }
 }
+
+@media (max-width: 1279px) and (min-width: 1200px) {
+.testi {
+  padding-right: 50px !important;
+} }
