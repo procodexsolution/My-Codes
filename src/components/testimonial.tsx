@@ -18,7 +18,7 @@ const testimonials = [
     name: "John Doe",
     role: "Client",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
-    feedback: "I can't recommend this team enough! They transformed our outdated website into a modern, user-friendly platform that has significantly improved our conversion rates.",
+    feedback: "I cant recommend this team enough! They transformed our outdated website into a modern, user-friendly platform that has significantly improved our conversion rates.",
     rating: 5,
   },
   {
@@ -39,7 +39,7 @@ const testimonials = [
     name: "Emma Johnson",
     role: "Client",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
-    feedback: "This team truly understands what makes a WordPress site successful. They combined beautiful design with technical excellence to create a website that's both aesthetically pleasing.",
+    feedback: "This team truly understands what makes a WordPress site successful. They combined beautiful design with technical excellence to create a website that`s both aesthetically pleasing.",
     rating: 5,
   },
   {
@@ -51,7 +51,11 @@ const testimonials = [
   },
 ];
 
-function NextArrow({ onClick }: any) {
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+function NextArrow({ onClick }: ArrowProps) {
   return (
     <div
       className="absolute top-1/2 2xl:-right-10 md:-right-4 -right-2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-500 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center cursor-pointer shadow-lg z-10 transition-all duration-300 group"
@@ -62,7 +66,7 @@ function NextArrow({ onClick }: any) {
   );
 }
 
-function PrevArrow({ onClick }: any) {
+function PrevArrow({ onClick }: ArrowProps) {
   return (
     <div
       className="absolute top-1/2 2xl:-left-10 md:-left-4 -left-2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-500 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center cursor-pointer shadow-lg z-10 transition-all duration-300 group"
@@ -72,6 +76,7 @@ function PrevArrow({ onClick }: any) {
     </div>
   );
 }
+
 
 export default function Testimonials() {
   const settings = {
@@ -148,7 +153,7 @@ export default function Testimonials() {
 
                 {/* Feedback Text */}
                 <p className="text-gray-300 italic text-sm md:text-base leading-relaxed flex-grow mb-3">
-                  "{testimonial.feedback}"
+                  `{testimonial.feedback}
                 </p>
 
                 {/* Star Rating */}
